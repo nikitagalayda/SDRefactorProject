@@ -3,7 +3,7 @@ package com.system.measurement.Units;
 import java.math.BigDecimal;
 import com.system.measurement.Unit;
 
-public class Centimiter implements Unit {
+public class Centimeter implements Unit {
 	
 	final String CENT_TO_INCH = "0.3937";
 	final String CENT_TO_METER = "0.01";

@@ -4,12 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
-/**
- * 
- * @author adeel ahmad
- *
- */
 public class ConverterApp {
    
 	
@@ -24,7 +18,9 @@ public class ConverterApp {
 			do{
 				System.out.println("Input measurements to convert: ");
 				input = br.readLine();
-				System.out.println(converter.convertOutput(input));		
+				converter.convertOutput(input);
+				converter.printOutput();
+//				System.out.println(converter.toString());		
 			}while(!input.equalsIgnoreCase("exit"));
 		}catch(IOException ioe) {
 			System.out.println("IO Error when trying to read input");

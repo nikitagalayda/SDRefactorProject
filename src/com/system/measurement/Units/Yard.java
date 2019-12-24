@@ -1,8 +1,6 @@
 package com.system.measurement.Units;
 
 import java.math.BigDecimal;
-
-import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
 import com.system.measurement.Unit;
 
 public class Yard implements Unit {
@@ -41,7 +39,7 @@ public class Yard implements Unit {
 	}
 	@Override
 	public BigDecimal toYard(BigDecimal input) {
-		Result input;
+		return input;
 	}
 
 }
