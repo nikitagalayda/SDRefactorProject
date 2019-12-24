@@ -1,43 +1,69 @@
 package com.system.measurement;
 
+import java.math.BigDecimal;
+
+import com.system.measurement.Units.Centimiter;
+import com.system.measurement.Units.Feet;
+import com.system.measurement.Units.Inch;
+import com.system.measurement.Units.Meter;
+import com.system.measurement.Units.Yard;
+
 
 /**
  * 
  * @author adeel ahmad
  *
  */
-public interface Converter {
+public class Converter {
 	
+	private MyObject object = new MyObject();
+	private BigDecimal result = null;
+	private BigDecimal length = null;
+	private Unit fromUnit = null;
 	static final String CENTIMETER = "cm";
     static final String METER = "m";
     static final String YARD = "yd";
     static final String INCH = "in";
     static final String FEET = "ft";
     
-    static final String FEET_TO_CENT = "30.48";
-	static final String FEET_TO_INCH = "12";
-	static final String FEET_TO_METER = "0.3048";
-	static final String FEET_TO_YARD = "0.3333";
+	public String convertOutput(String input) {
+	    parseInput(input);
+	    
+	    if(object.getFromUnit().equals(CENTIMETER)) {
+			fromUnit = new Centimiter();
+		}else if(object.getFromUnit().equals(FEET)) {
+			fromUnit = new Feet();
+		}else if(object.getFromUnit().equals(INCH)) {
+			fromUnit = new Inch();
+		}else if(object.getFromUnit().equals(YARD)) {
+			fromUnit = new Yard();
+		}else if(object.getFromUnit().equals(METER)) {
+			fromUnit = new Meter();
+		}
+	    
+	    if(object.getToUnit().equals(CENTIMETER)) {
+	    		return fromUnit.toCm(length).toString();
+		}else if(object.getToUnit().equals(FEET)) {
+			return fromUnit.toFeet(length).toString();
+		}else if(object.getToUnit().equals(INCH)) {
+			return fromUnit.toInch(length).toString();
+		}else if(object.getToUnit().equals(YARD)) {
+			return fromUnit.toYard(length).toString();
+		}else if(object.getToUnit().equals(METER)) {
+			return fromUnit.toMeter(length).toString();
+		}
+		else {
+			return fromUnit.toMeter(length).toString();
+		}
+	}
 	
-	static final String YARD_TO_FEET = "3";
-	static final String YARD_TO_METER = "0.9144";
-	static final String YARD_TO_CENT = "91.44";
-	static final String YARD_TO_INCH = "36";
-	
-	static final String METER_TO_CENT = "100";
-	static final String METER_TO_FEET = "3.2808";
-	static final String METER_TO_YARD = "1.0936";
-	static final String METER_TO_INCH = "39.37";
-	
-	static final String INCH_TO_CENT = "2.54";
-	static final String INCH_TO_METER = "0.0254";
-	static final String INCH_TO_YARD = "0.0278";
-	static final String INCH_TO_FEET = "0.0833"; 
-	
-	static final String CENT_TO_INCH = "0.3937";
-	static final String CENT_TO_METER = "0.01";
-	static final String CENT_TO_FEET = "0.0328";
-	static final String CENT_TO_YARD = "0.0109";
-	
-	public String convertOutput(String input);
+	private void parseInput(String input) {
+		String[] extracted = input.split("\\s+");
+		if(extracted.length == 4) {
+			object.setLength(extracted[0]);
+			object.setFromUnit(extracted[1]);
+			object.setToUnit(extracted[3]);
+			length = new BigDecimal(object.getLength());
+		}
+	}
 }

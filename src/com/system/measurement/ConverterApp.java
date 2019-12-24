@@ -17,7 +17,7 @@ public class ConverterApp {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-	    Converter converter = new ConverterImpl();
+	    Converter converter = new Converter();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = null;
 		try {
