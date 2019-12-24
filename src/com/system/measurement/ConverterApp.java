@@ -5,24 +5,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ConverterApp {
-   
-	
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 	    Converter converter = new Converter();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String input = null;
 		try {
-			do{
+			do {
 				System.out.println("Input measurements to convert: ");
 				input = br.readLine();
 				converter.convertOutput(input);
 				converter.printOutput();
-//				System.out.println(converter.toString());		
-			}while(!input.equalsIgnoreCase("exit"));
-		}catch(IOException ioe) {
+			}
+			while(!input.equalsIgnoreCase("exit"));
+		}
+		catch(IOException ioe) {
 			System.out.println("IO Error when trying to read input");
 			ioe.printStackTrace();
 			System.exit(1);

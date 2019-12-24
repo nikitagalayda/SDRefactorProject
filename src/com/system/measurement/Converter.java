@@ -25,25 +25,33 @@ public class Converter {
 	    
 	    if(inputParser.getFromUnit().equals(CENTIMETER)) {
 			fromUnit = new Centimeter();
-		}else if(inputParser.getFromUnit().equals(FEET)) {
+		}
+	    else if(inputParser.getFromUnit().equals(FEET)) {
 			fromUnit = new Feet();
-		}else if(inputParser.getFromUnit().equals(INCH)) {
+		}
+	    else if(inputParser.getFromUnit().equals(INCH)) {
 			fromUnit = new Inch();
-		}else if(inputParser.getFromUnit().equals(YARD)) {
+		}
+	    else if(inputParser.getFromUnit().equals(YARD)) {
 			fromUnit = new Yard();
-		}else if(inputParser.getFromUnit().equals(METER)) {
+		}
+	    else if(inputParser.getFromUnit().equals(METER)) {
 			fromUnit = new Meter();
 		}
 	    
 	    if(inputParser.getToUnit().equals(CENTIMETER)) {
 	    		convertedUnit = fromUnit.toCm(inputParser.getInputValue());
-		}else if(inputParser.getToUnit().equals(FEET)) {
+		}
+	    else if(inputParser.getToUnit().equals(FEET)) {
 			convertedUnit = fromUnit.toFeet(inputParser.getInputValue());
-		}else if(inputParser.getToUnit().equals(INCH)) {
+		}
+	    else if(inputParser.getToUnit().equals(INCH)) {
 			convertedUnit = fromUnit.toInch(inputParser.getInputValue());
-		}else if(inputParser.getToUnit().equals(YARD)) {
+		}
+	    else if(inputParser.getToUnit().equals(YARD)) {
 			convertedUnit = fromUnit.toYard(inputParser.getInputValue());
-		}else if(inputParser.getToUnit().equals(METER)) {
+		}
+	    else if(inputParser.getToUnit().equals(METER)) {
 			convertedUnit = fromUnit.toMeter(inputParser.getInputValue());
 		}
 	    return convertedUnit.toString();

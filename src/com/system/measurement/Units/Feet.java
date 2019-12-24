@@ -10,6 +10,7 @@ public class Feet implements Unit {
 	final String FEET_TO_INCH = "12";
 	final String FEET_TO_METER = "0.3048";
 	final String FEET_TO_YARD = "0.3333";
+	
 	@Override
 	public BigDecimal toCm(BigDecimal input) {
 		BigDecimal result = new BigDecimal(FEET_TO_CENT);
@@ -17,6 +18,7 @@ public class Feet implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toInch(BigDecimal input) {
 		BigDecimal result = new BigDecimal(FEET_TO_INCH);
@@ -24,6 +26,7 @@ public class Feet implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toMeter(BigDecimal input) {
 		BigDecimal result = new BigDecimal(FEET_TO_METER);
@@ -31,10 +34,12 @@ public class Feet implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toFeet(BigDecimal input) {
 		return input;
 	}
+	
 	@Override
 	public BigDecimal toYard(BigDecimal input) {
 		BigDecimal result = new BigDecimal(FEET_TO_YARD);
@@ -42,5 +47,4 @@ public class Feet implements Unit {
 		
 		return result;
 	}
-
 }

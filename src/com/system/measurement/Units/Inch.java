@@ -18,10 +18,12 @@ public class Inch implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toInch(BigDecimal input) {
 		return input;
 	}
+	
 	@Override
 	public BigDecimal toMeter(BigDecimal input) {
 		BigDecimal result = new BigDecimal(INCH_TO_METER);
@@ -29,6 +31,7 @@ public class Inch implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toFeet(BigDecimal input) {
 		BigDecimal result = new BigDecimal(INCH_TO_FEET);
@@ -36,6 +39,7 @@ public class Inch implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toYard(BigDecimal input) {
 		BigDecimal result = new BigDecimal(INCH_TO_YARD);
@@ -43,5 +47,4 @@ public class Inch implements Unit {
 		
 		return result;
 	}
-
 }

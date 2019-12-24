@@ -18,6 +18,7 @@ public class Meter implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toInch(BigDecimal input) {
 		BigDecimal result = new BigDecimal(METER_TO_INCH);
@@ -25,10 +26,12 @@ public class Meter implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toMeter(BigDecimal input) {
 		return input;
 	}
+	
 	@Override
 	public BigDecimal toFeet(BigDecimal input) {
 		BigDecimal result = new BigDecimal(METER_TO_FEET);
@@ -36,6 +39,7 @@ public class Meter implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toYard(BigDecimal input) {
 		BigDecimal result = new BigDecimal(METER_TO_YARD);
@@ -43,5 +47,4 @@ public class Meter implements Unit {
 		
 		return result;
 	}
-
 }

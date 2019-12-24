@@ -9,6 +9,7 @@ public class Yard implements Unit {
 	final String YARD_TO_METER = "0.9144";
 	final String YARD_TO_CENT = "91.44";
 	final String YARD_TO_INCH = "36";
+	
 	@Override
 	public BigDecimal toCm(BigDecimal input) {
 		BigDecimal result = new BigDecimal(YARD_TO_CENT);
@@ -16,6 +17,7 @@ public class Yard implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toInch(BigDecimal input) {
 		BigDecimal result = new BigDecimal(YARD_TO_INCH);
@@ -23,6 +25,7 @@ public class Yard implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toMeter(BigDecimal input) {
 		BigDecimal result = new BigDecimal(YARD_TO_METER);
@@ -30,6 +33,7 @@ public class Yard implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toFeet(BigDecimal input) {
 		BigDecimal result = new BigDecimal(YARD_TO_FEET);
@@ -37,9 +41,9 @@ public class Yard implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal toYard(BigDecimal input) {
 		return input;
 	}
-
 }
