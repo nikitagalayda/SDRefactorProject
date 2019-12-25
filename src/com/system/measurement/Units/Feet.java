@@ -6,45 +6,51 @@ import com.system.measurement.Unit;
 
 public class Feet implements Unit {
 
-	final String FEET_TO_CENT = "30.48";
-	final String FEET_TO_INCH = "12";
-	final String FEET_TO_METER = "0.3048";
-	final String FEET_TO_YARD = "0.3333";
+	final String CENT_TO_FEET = "0.0328";
+	final String INCH_TO_FEET = "0.0833";
+	final String METER_TO_FEET = "3.2808";
+	final String YARD_TO_FEET = "3";
 	
 	@Override
-	public BigDecimal toCm(BigDecimal input) {
-		BigDecimal result = new BigDecimal(FEET_TO_CENT);
+	public BigDecimal fromCm(BigDecimal input) {
+		BigDecimal result = new BigDecimal(CENT_TO_FEET);
 		result = result.multiply(input);
 		
 		return result;
 	}
-	
+
 	@Override
-	public BigDecimal toInch(BigDecimal input) {
-		BigDecimal result = new BigDecimal(FEET_TO_INCH);
+	public BigDecimal fromInch(BigDecimal input) {
+		BigDecimal result = new BigDecimal(INCH_TO_FEET);
 		result = result.multiply(input);
 		
 		return result;
 	}
-	
+
 	@Override
-	public BigDecimal toMeter(BigDecimal input) {
-		BigDecimal result = new BigDecimal(FEET_TO_METER);
-		result = result.multiply(input);
-		
-		return result;
-	}
-	
-	@Override
-	public BigDecimal toFeet(BigDecimal input) {
+	public BigDecimal fromMeter(BigDecimal input) {
 		return input;
 	}
-	
+
 	@Override
-	public BigDecimal toYard(BigDecimal input) {
-		BigDecimal result = new BigDecimal(FEET_TO_YARD);
+	public BigDecimal fromFeet(BigDecimal input) {
+		BigDecimal result = new BigDecimal(METER_TO_FEET);
 		result = result.multiply(input);
 		
 		return result;
+	}
+
+	@Override
+	public BigDecimal fromYard(BigDecimal input) {
+		BigDecimal result = new BigDecimal(YARD_TO_FEET);
+		result = result.multiply(input);
+		
+		return result;
+	}
+
+	@Override
+	public BigDecimal convert(BigDecimal input, Unit toUnit) {
+		System.out.println(toUnit.fromFeet(input));
+		return toUnit.fromFeet(input);
 	}
 }

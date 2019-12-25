@@ -5,46 +5,52 @@ import java.math.BigDecimal;
 import com.system.measurement.Unit;
 
 public class Meter implements Unit {
+	
+	final String CENT_TO_METER = "0.01";
+	final String INCH_TO_METER = "0.0254";
+	final String FEET_TO_METER = "0.3048";
+	final String YARD_TO_METER = "0.9144";
 
-	final String METER_TO_CENT = "100";
-	final String METER_TO_FEET = "3.2808";
-	final String METER_TO_YARD = "1.0936";
-	final String METER_TO_INCH = "39.37";
-	
 	@Override
-	public BigDecimal toCm(BigDecimal input) {
-		BigDecimal result = new BigDecimal(METER_TO_CENT);
+	public BigDecimal fromCm(BigDecimal input) {
+		BigDecimal result = new BigDecimal(CENT_TO_METER);
 		result = result.multiply(input);
 		
 		return result;
 	}
-	
+
 	@Override
-	public BigDecimal toInch(BigDecimal input) {
-		BigDecimal result = new BigDecimal(METER_TO_INCH);
+	public BigDecimal fromInch(BigDecimal input) {
+		BigDecimal result = new BigDecimal(INCH_TO_METER);
 		result = result.multiply(input);
 		
 		return result;
 	}
-	
+
 	@Override
-	public BigDecimal toMeter(BigDecimal input) {
+	public BigDecimal fromMeter(BigDecimal input) {
 		return input;
 	}
-	
+
 	@Override
-	public BigDecimal toFeet(BigDecimal input) {
-		BigDecimal result = new BigDecimal(METER_TO_FEET);
+	public BigDecimal fromFeet(BigDecimal input) {
+		BigDecimal result = new BigDecimal(FEET_TO_METER);
 		result = result.multiply(input);
 		
 		return result;
 	}
-	
+
 	@Override
-	public BigDecimal toYard(BigDecimal input) {
-		BigDecimal result = new BigDecimal(METER_TO_YARD);
+	public BigDecimal fromYard(BigDecimal input) {
+		BigDecimal result = new BigDecimal(YARD_TO_METER);
 		result = result.multiply(input);
 		
 		return result;
+	}
+
+	@Override
+	public BigDecimal convert(BigDecimal input, Unit toUnit) {
+		System.out.println(toUnit.fromMeter(input));
+		return toUnit.fromMeter(input);
 	}
 }
