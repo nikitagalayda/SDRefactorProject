@@ -18,10 +18,12 @@ public class Inch implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal fromInch(BigDecimal input) {
 		return input;
 	}
+	
 	@Override
 	public BigDecimal fromMeter(BigDecimal input) {
 		BigDecimal result = new BigDecimal(METER_TO_INCH);
@@ -29,6 +31,7 @@ public class Inch implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal fromFeet(BigDecimal input) {
 		BigDecimal result = new BigDecimal(FEET_TO_INCH);
@@ -36,6 +39,7 @@ public class Inch implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal fromYard(BigDecimal input) {
 		BigDecimal result = new BigDecimal(YARD_TO_INCH);
@@ -43,9 +47,9 @@ public class Inch implements Unit {
 		
 		return result;
 	}
+	
 	@Override
 	public BigDecimal convert(BigDecimal input, Unit toUnit) {
-		System.out.println(toUnit.fromInch(input));
 		return toUnit.fromInch(input);
 	}
 }

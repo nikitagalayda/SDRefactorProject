@@ -29,15 +29,15 @@ public class Feet implements Unit {
 
 	@Override
 	public BigDecimal fromMeter(BigDecimal input) {
-		return input;
-	}
-
-	@Override
-	public BigDecimal fromFeet(BigDecimal input) {
 		BigDecimal result = new BigDecimal(METER_TO_FEET);
 		result = result.multiply(input);
 		
 		return result;
+	}
+
+	@Override
+	public BigDecimal fromFeet(BigDecimal input) {
+		return input;
 	}
 
 	@Override
@@ -50,7 +50,6 @@ public class Feet implements Unit {
 
 	@Override
 	public BigDecimal convert(BigDecimal input, Unit toUnit) {
-		System.out.println(toUnit.fromFeet(input));
 		return toUnit.fromFeet(input);
 	}
 }

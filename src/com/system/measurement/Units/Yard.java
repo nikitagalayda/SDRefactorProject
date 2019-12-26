@@ -49,7 +49,6 @@ public class Yard implements Unit {
 
 	@Override
 	public BigDecimal convert(BigDecimal input, Unit toUnit) {
-		System.out.println(toUnit.fromYard(input));
 		return toUnit.fromYard(input);
 	}
 }

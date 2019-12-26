@@ -17,7 +17,6 @@ public class Centimeter implements Unit {
 	
 	
 	public BigDecimal convert(BigDecimal input, Unit toUnit) {
-		System.out.println(toUnit.fromCm(input));
 		return toUnit.fromCm(input);
 	}
 

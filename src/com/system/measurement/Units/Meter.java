@@ -50,7 +50,6 @@ public class Meter implements Unit {
 
 	@Override
 	public BigDecimal convert(BigDecimal input, Unit toUnit) {
-		System.out.println(toUnit.fromMeter(input));
 		return toUnit.fromMeter(input);
 	}
 }
