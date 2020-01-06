@@ -3,7 +3,7 @@ package com.system.measurement;
 public class Converter {
 	
 	private Unit fromUnit = null;
-	private Unit toUnit = null;
+	private String toUnit = null;
 	String convertedUnit = null;
 	private InputParser inputParser = null;
     
@@ -12,7 +12,7 @@ public class Converter {
 		UnitFactory unitFactory = new UnitFactory();
 
 		fromUnit = unitFactory.createUnit(inputParser.getFromUnit());
-		toUnit = unitFactory.createUnit(inputParser.getToUnit());
+		toUnit = inputParser.getToUnit();
 		convertedUnit = fromUnit.convert(inputParser.getInputValue(), toUnit).toString();
 		
 		return convertedUnit;

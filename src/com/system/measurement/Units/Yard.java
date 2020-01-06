@@ -1,54 +1,17 @@
 package com.system.measurement.Units;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+
 import com.system.measurement.Unit;
 
-public class Yard implements Unit {
+public class Yard extends Unit {
 
-	final String CENT_TO_YARD = "0.0109";
-	final String INCH_TO_YARD = "0.0278";
-	final String METER_TO_YARD = "1.0936";
-	final String FEET_TO_YARD = "0.3333";
-	
-	@Override
-	public BigDecimal fromCm(BigDecimal input) {
-		BigDecimal result = new BigDecimal(CENT_TO_YARD);
-		result = result.multiply(input);
-		
-		return result;
-	}
-
-	@Override
-	public BigDecimal fromInch(BigDecimal input) {
-		BigDecimal result = new BigDecimal(INCH_TO_YARD);
-		result = result.multiply(input);
-		
-		return result;
-	}
-
-	@Override
-	public BigDecimal fromMeter(BigDecimal input) {
-		BigDecimal result = new BigDecimal(METER_TO_YARD);
-		result = result.multiply(input);
-		
-		return result;
-	}
-
-	@Override
-	public BigDecimal fromFeet(BigDecimal input) {
-		BigDecimal result = new BigDecimal(FEET_TO_YARD);
-		result = result.multiply(input);
-		
-		return result;
-	}
-
-	@Override
-	public BigDecimal fromYard(BigDecimal input) {
-		return input;
-	}
-
-	@Override
-	public BigDecimal convert(BigDecimal input, Unit toUnit) {
-		return toUnit.fromYard(input);
+	public Yard() {
+		conversionMap = new HashMap<String, String>();
+		conversionMap.put("cm", "91.44");
+		conversionMap.put("in", "36");
+		conversionMap.put("ft", "3");
+		conversionMap.put("m", "0.9144");
 	}
 }
