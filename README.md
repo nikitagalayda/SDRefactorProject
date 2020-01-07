@@ -37,4 +37,6 @@ SD Project changes
 10. Remove unnecessary comments
 11. Rename functions and classes to better, more descriptive names
 
-9 Commits
+![](UMLDiagram.png)
+
+10 Commits
